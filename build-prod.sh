@@ -31,4 +31,9 @@ if [ "$GIDOLR" -eq "0" ] || [ "$UIDOLR" -eq "0" ]; then
     exit 1
 fi
 
-docker build -t ${TAG} -f Dockerfile --build-arg IMAGE=${BASE_IMAGE} --build-arg VERSION=${BASE_VERSION} --build-arg GIDOLR=${GIDOLR} --build-arg UIDOLR=${UIDOLR} --build-arg GIDORA=${GIDORA} --build-arg WITHORACLE=1 --build-arg WITHKAFKA=1 --build-arg WITHPROTOBUF=1 --build-arg BUILD_TYPE=Release .
+docker build -t ${TAG} -f Dockerfile \
+    --build-arg IMAGE=${BASE_IMAGE} \
+    --build-arg VERSION=${BASE_VERSION} \
+    --build-arg GIDORA=${GIDORA} \
+    --build-arg WITHORACLE=1 \
+    --build-arg BUILD_TYPE=Release .
